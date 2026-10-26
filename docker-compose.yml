@@ -1,0 +1,12 @@
+services:
+  forecasting-api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      DATA_PATH: data/sample_sales.csv
+      MODEL_PATH: artifacts/model.json
+      LOG_PATH: logs/api.jsonl
+    volumes:
+      - ./artifacts:/workspace/artifacts
+      - ./logs:/workspace/logs
